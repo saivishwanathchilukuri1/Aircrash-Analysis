@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 #Aircrashes code
 
+=======
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
 #importing all required libraries
 install.packages("PerformanceAnalytics")
 install.packages("plotly")
@@ -28,7 +31,12 @@ library(plotrix)
 #loading dataset
 master_air_crash_df <-
   read_csv(
+<<<<<<< HEAD
     "C:\\Bigdata\\Aircrashes\\dataset3\\Airplane_Crashes_and_Fatalities_Since_1908_new.csv")
+=======
+    "C:\\StFX\\Bigdata\\Project2\\Airplane_Crashes_and_Fatalities_Since_1908_new.csv"
+  )
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
 
 air_crash_df = master_air_crash_df
 
@@ -114,18 +122,30 @@ Fatalities <- air_crash_df %>%
 
 Fatalities %>% 
   ggplot(aes(
+<<<<<<< HEAD
     y = (total_fatalities / total_passengers) * 100,
     x = Year,
     color = (total_fatalities / total_passengers) * 100,
     group = 10
   ))  +
+=======
+  y = (total_fatalities / total_passengers) * 100,
+  x = Year,
+  color = (total_fatalities / total_passengers) * 100,
+  group = 10
+))  +
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   geom_line(size = 1,
             linetype = 1) +
   geom_point(size = 3, shape = 20) +
   geom_smooth() +
   xlab("Years") + ylab("% Fatalities") +
   scale_x_discrete(breaks = seq(from = 1908, to = 2019, by = 10)) +
+<<<<<<< HEAD
   ggtitle("Figure 4.Percent of fatalities per year") +
+=======
+  ggtitle(Figure 4."Percent of fatalities per year") +
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   theme(panel.grid = element_blank(), plot.title = element_text(hjust = 0.5))
 #end of 2 fatality percent
 
@@ -139,6 +159,7 @@ Location_Crash <- Location_Crash[1:10, ]
 
 Location_Crash %>% 
   ggplot(aes(
+<<<<<<< HEAD
     x = reorder(LocationCountry,-total_fatalities),
     y = total_fatalities,
     fill =  LocationCountry
@@ -146,6 +167,15 @@ Location_Crash %>%
   geom_bar(stat = "identity", width = 0.5) +
   xlab("Countries") + ylab("Number of fatalities") +
   ggtitle("Figure 5.Top 10 Countries with Maximum Fatalities") +
+=======
+         x = reorder(LocationCountry,-total_fatalities),
+         y = total_fatalities,
+         fill =  LocationCountry
+       )) +
+  geom_bar(stat = "identity", width = 0.5) +
+  xlab("Countries") + ylab("Number of fatalities") +
+  ggtitle("Figure 5. Top 10 Countries with Maximum Fatalities") +
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   theme(panel.grid = element_blank(), plot.title = element_text(hjust = 0.5))
 
 pie3D(
@@ -204,7 +234,11 @@ ggplot(years, aes(y = Freq, x = Var1, color = Freq, group = 1))  +
   geom_smooth() +
   xlab("Years") + ylab("Crashes") +
   scale_x_discrete(breaks = seq(from = 1970, to = 2019, by = 10)) +
+<<<<<<< HEAD
   ggtitle("Figure 9.Total number of crashes per year from 1970 to 2019") +
+=======
+  ggtitle("Figure 9. Total number of crashes per year from 1970 to 2019") +
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   theme(panel.grid = element_blank(), plot.title = element_text(hjust = 0.5))
 #end of 6 Total number of crashes per year from 1970 to 2019
 
@@ -220,8 +254,12 @@ plot_ly(x = total_fetalities_passengers$Year) %>%
   add_lines(
     y = total_fetalities_passengers$total_passengers,
     color = I("red"),
+<<<<<<< HEAD
     name = " Figure 9 .
     Total Passengers"
+=======
+    name = "Total Passengers"
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   ) %>%
   add_lines(
     y = total_fetalities_passengers$total_fetalities,
@@ -293,7 +331,11 @@ ggplot(datamining_sentences[1:20, ],
        )) +
   geom_bar(stat = "identity", fill = "blue", width = 0.5) +
   xlab("Count") + ylab("Crash Phrases") +
+<<<<<<< HEAD
   ggtitle("Figure 12.Common air crash words") +
+=======
+  ggtitle("Figure 12. Common air crash words") +
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   coord_flip() +
   theme(panel.grid = element_blank(), plot.title = element_text(hjust = 0.5))
 #end of 11 other data mining
@@ -310,7 +352,11 @@ selected_columns_df <- air_crash_df %>%
     `Aboard Crew`,
     Fatalities,
     `Fatalities Passangers`,
+<<<<<<< HEAD
     `Figure 1 Fatalities Crew`
+=======
+    `Fatalities Crew`
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   )
 
 selected_columns_df = na.omit(selected_columns_df)
@@ -332,7 +378,11 @@ ggplot(df_time_freq,
            alpha = Freq)) +
   geom_bar(stat = "identity", fill = "maroon", width = 0.5) +
   xlab("Hour") + ylab("Number of crashes") +
+<<<<<<< HEAD
   ggtitle("Figure 13. Air crashes per hour") +
+=======
+  ggtitle("Figure 13.Air crashes per hour") +
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   coord_flip() +
   theme(panel.grid = element_blank(), plot.title = element_text(hjust = 0.5))
 #end of 13 hourly crash
@@ -345,7 +395,11 @@ selected_columns_df = na.omit(selected_columns_df)
 #month
 y <- dnorm(air_crash_df$Month, mean = 2.5, sd = 0.5)
 plot(air_crash_df$Month, y) +
+<<<<<<< HEAD
   y <- pnorm(air_crash_df$Month, mean = 2.5, sd = 2)
+=======
+y <- pnorm(air_crash_df$Month, mean = 2.5, sd = 2)
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
 plot(air_crash_df$Month, y)
 #end of 14 normal distribution
 
@@ -364,7 +418,10 @@ ggscatter(
 
 ggqqplot(air_crash_df$Aboard, ylab = "Aboard")
 ggqqplot(air_crash_df$Fatalities, ylab = "Fatalities")
+<<<<<<< HEAD
 
+=======
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
 #end of 15 corelation between aboard and fatalities
 
 #start of 16 Use chart.Correlation(): Draw scatter plots
@@ -376,9 +433,13 @@ selected_columns_df$Aboard <-
 selected_columns_df$Fatalities <-
   sapply(selected_columns_df$Fatalities, as.numeric)
 
+<<<<<<< HEAD
 chart.Correlation(selected_columns_df, histogram = TRUE, pch = 19)
 +title("Figure 2. Corr b/w Aboard and Fatalities                                      ")
 
+=======
+chart.Correlation(selected_columns_df, histogram = TRUE, pch = 19)+title("Figure 2. Corr b/w Aboard and Fatalities")   
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
 #end of 16 Use chart.Correlation(): Draw scatter plots
 
 #start of 17 crashes per day
@@ -391,7 +452,11 @@ ggplot(day, aes(y = Freq, x = Var1, group = 1))  +
   geom_smooth() +
   xlab("Day") + ylab("Crashes") +
   scale_x_discrete(breaks = seq(from = 1, to = 31, by = 1)) +
+<<<<<<< HEAD
   ggtitle("Figure 14 .Total number of crashes per day") +
+=======
+  ggtitle("Figure 14. Total number of crashes per day") +
+>>>>>>> be301d64205e4922cd41e70184270392270fabbd
   theme(panel.grid = element_blank(), plot.title = element_text(hjust = 0.5))
 #end of 17 crashes per day
 
